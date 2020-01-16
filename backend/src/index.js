@@ -16,6 +16,8 @@ app.use(routes)
 
 app.listen(3333)
 
+//teste
+
 //query params: request.query ?key=value
 //route params: request.params
 //body: request.body 
