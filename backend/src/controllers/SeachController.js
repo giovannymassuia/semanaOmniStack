@@ -13,7 +13,7 @@ module.exports = {
             techs: {
                 $in: techsArray,
             },
-            location: {
+            /*location: {
                 $near: {
                     $geometry: {
                         type: 'Point',
@@ -21,7 +21,7 @@ module.exports = {
                     },
                     $maxDistance: 10000,
                 },
-            },
+            },*/
         })
         
         return response.json({devs: devs})

@@ -1,9 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const http = require('http')
 const routes = require('./routes')
+const { setupWebsocket } = require('./websocket')
 
 const app = express()
+const Server = http.Server(app)
+
+setupWebsocket(Server)
 
 mongoose.connect('mongodb+srv://omnistack:omnistack123@cluster0-zmuh1.mongodb.net/week10?retryWrites=true&w=majority',{
     useNewUrlParser: true,
@@ -14,7 +19,7 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
-app.listen(3333)
+Server.listen(3333)
 
 //teste
 
